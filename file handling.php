@@ -25,6 +25,11 @@ if(isset($_POST["set"]))
    
     
 }
+if(isset($_POST["done"]))
+{
+    echo "<script>location.href='login.php'</script>";
+    
+}
 ?>
     <form action="file handling.php" method ="POST">
         <h1 style="text-align: center;">Registertion-form</h1>
@@ -108,7 +113,8 @@ if(isset($_POST["set"]))
         </table>
         </fieldset>
 
-        <input  type="submit" name="set" value="submit"> 
+        <input  type="submit" name="set" value="submit">
+        <input  type="submit" name="done" value="done">  
     </form>
 <?php
    // $filepath("Information.txt")
