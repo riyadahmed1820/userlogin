@@ -2,15 +2,9 @@
    // $filepath("Information.txt")
     
     $file=fopen("Information.txt","r");
-    $s1=fread($file,filesize("Information.txt"));
-    $data=(explode("\n",$s1));
-   echo $data[3];
-   echo "<br>";
-   echo $data[4];
-    echo "<br>";
-
-    fclose($file);
-    
+    while(!feof($file)) {
+  echo fgets($file) . "<br>";
+}
     
 ?>
 <html>
@@ -58,9 +52,7 @@ if(isset($_POST["SignUp"]))
 }
 if(isset($_POST["Login"]))
 {
-    if($UserName=$data[3] or $Password=$data[4]){
  echo "<script>location.href='Welcompage.php'</script>";
-} 
 }
 ?>
 </form>

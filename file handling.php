@@ -4,6 +4,7 @@
 </head>
 <body>
  <?php
+ 
 if(isset($_POST["set"]))
 {
     $Firstname=$_POST["firstname"];
@@ -20,7 +21,7 @@ if(isset($_POST["set"]))
        echo "Please empty details <br>";
     }
     else {
-				echo $_POST['firstname'] . " " . $_POST['lastname'];
+				echo "<script>location.href='login.php'</script>";
 		}
    
     
@@ -114,12 +115,13 @@ if(isset($_POST["done"]))
         </fieldset>
 
         <input  type="submit" name="set" value="submit">
-        <input  type="submit" name="done" value="done">  
+        <input  type="submit" name="reset" value="Reset">
+        <input  type="submit" name="done" value="Back">    
     </form>
 <?php
-   // $filepath("Information.txt")
+
     extract($_REQUEST);
-    $file=fopen("Information.txt","a");
+    $file=fopen("Information.txt","w+");
     
     fwrite($file,"First Name:");
     fwrite($file, $firstname ."\n");
